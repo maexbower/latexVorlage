@@ -166,3 +166,38 @@
 % Abstände in Tabellen
 \setlength{\tabcolsep}{\spaltenabstand}
 \renewcommand{\arraystretch}{\zeilenabstand}
+
+
+%unified printing of pdf files for Apendix
+\newcommand{\printPDFpage}[2]{%
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio,
+		page=#2]
+		{#1}
+	\end{figure}
+}
+
+% Einheitliche Kapitelreferenzierung
+\newcommand{\fullref}[1]{
+	\ref{#1} \nameref{#1}
+}
+
+%add apoendix package for chapter naming
+\usepackage[titletoc]{appendix}
+\renewcommand{\appendixtocname}{\langanhang}
+\renewcommand{\appendixpagename}{\langanhang}
+
+% define counter to continue roman numbering
+\newcounter{savepage}
+
+% Define Text Color Shortcuts
+\newcommand{\rot}[1]{
+	\textcolor{red}{#1}
+}
+\newcommand{\gruen}[1]{
+	\textcolor{green}{#1}
+}
+\newcommand{\blau}[1]{
+	\textcolor{blue}{#1}
+}
